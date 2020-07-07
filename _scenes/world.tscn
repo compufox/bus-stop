@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://models/world.glb" type="PackedScene" id=1]
+[ext_resource path="res://addons/fps/simple_fpsplayer/Player.tscn" type="PackedScene" id=2]
+
+[node name="world" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40803, 0 )
+
+[node name="ground" parent="." index="0"]
+transform = Transform( 41.3958, 0, 0, 0, 41.3958, 0, 0, 0, 41.3958, 0.0129337, 0.0225754, -0.00380516 )
+
+[node name="Player" parent="." index="7" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 43.8743, 2.83879, 8.99637 )
+
+[node name="SpotLight" type="SpotLight" parent="Spot" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -9.53674e-07 )
+spot_range = 11.5857
+spot_angle = 27.7345
+
+[node name="OmniLight" type="OmniLight" parent="Spot" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.41014, 0 )
+light_energy = 0.52
+omni_range = 9.23486
+
+[node name="SpotLight2" type="SpotLight" parent="streetlight001" index="0"]
+transform = Transform( 1.9119, 0, 0, 0, -4.37114e-08, 1, 0, -1.9119, -8.35718e-08, 0, 9.90188, 2.61077 )
+spot_range = 11.5857
+spot_angle = 27.7345
+
+[node name="OmniLight2" type="OmniLight" parent="streetlight001" index="1"]
+transform = Transform( 1.9119, 0, 0, 0, 1, 0, 0, 0, 1.9119, 0, 1.49174, 2.61077 )
+light_energy = 0.52
+omni_range = 9.23486
